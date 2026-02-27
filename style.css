@@ -57,8 +57,10 @@ header {
 
 .hero-image {
     width: 100%;
-    max-width: 480px;
+    max-width: 800px; /* Erhöht für Desktop-Ansicht */
     height: auto;
+    /* Verhindert, dass das Bild auf dem Handy zu extrem hoch wird */
+    max-height: 70vh; 
     border-radius: 12px;
     border: 2px solid var(--bollenhut-rot);
     object-fit: cover;
@@ -67,6 +69,16 @@ header {
     display: block;
 }
 
+/* Spezielle Anpassung für den Container, damit das Bild breiter werden darf */
+.container {
+    width: 100%;
+    max-width: 800px; /* Von 480px auf 800px erhöht */
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
 h1 {
     font-size: 1.5rem;
     font-weight: 800;
