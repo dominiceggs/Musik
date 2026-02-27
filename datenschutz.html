@@ -1,0 +1,123 @@
+﻿/* =========================================
+   GRUNDDESIGN (Dark Mode & Typografie)
+   ========================================= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dunkler Hintergrund */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px; /* Optimiert für mobile Ansicht */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Alle Standard-Links (entfernt das Blau) */
+a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #e60000; /* Bollenhut-Rot beim Drüberfahren */
+}
+
+.logo {
+    width: 180px; /* Bollenhut-Effekt */
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   BUTTONS (HAUPTSEITE)
+   ========================================= */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn {
+    display: block;
+    padding: 16px;
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Akzentfarbe Rot beim Hover */
+.btn:hover {
+    background-color: #e60000; 
+    border-color: #e60000;
+    color: white;
+    transform: scale(1.02);
+}
+
+/* =========================================
+   CONTENT BOXEN (UNTERSEITEN)
+   ========================================= */
+.content-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+}
+
+.legal-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Termin-Liste */
+.termin-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #333;
+}
+
+.termin-item:last-child {
+    border-bottom: none;
+}
+
+.date {
+    font-weight: bold;
+    color: #e60000;
+}
+
+.btn-small {
+    padding: 6px 12px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    font-size: 0.75rem;
+}
+
+.btn-small:hover {
+    background-color: white;
+    color: #1212
