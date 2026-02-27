@@ -5,6 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Songs | Bollenhut-Marie</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Spezifisches Styling für die Song-Liste mit Covern */
+        .song-cover {
+            width: 70px;
+            height: 70px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid rgba(230, 0, 0, 0.3);
+        }
+
+        .termin-item {
+            display: grid;
+            grid-template-columns: 70px 1fr auto;
+            gap: 15px;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .song-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .song-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .streaming-links {
+            display: flex;
+            gap: 15px;
+            font-size: 1.3rem;
+        }
+
+        .streaming-links a {
+            color: #b3b3b3 !important;
+            transition: color 0.3s ease;
+        }
+
+        /* Markenfarben beim Hover */
+        .streaming-links a.spotify:hover { color: #1DB954 !important; }
+        .streaming-links a.youtube:hover { color: #FF0000 !important; }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -15,19 +61,63 @@
 
         <main class="content-box">
             <div class="termin-item">
-                <span class="date">NEU</span>
-                <span class="location">Ich bin eure Marie</span>
-                <a href="https://suno.com/..." class="btn-small">Anhören</a>
+                <img src="img/cover-ichbineuremarie.png" alt="Cover" class="song-cover">
+                <div class="song-info">
+                    <span class="song-title">Ich bin eure Marie</span>
+                    <div class="streaming-links">
+                        <a href="https://open.spotify.com/intl-de/track/2y8W1em7RqvoBAh2LuvuXN?si=2d1fec1c4ce546cc" target="_blank" class="spotify"><i class="fab fa-spotify"></i></a>
+                        <a href="https://www.youtube.com/watch?v=Z-0wE6CHdjs&list=OLAK5uy_m7akVZ1sPnVvWJRWH8Kb6YYJcEE5O8SHY" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <audio class="marie-player" id="player1" src="audio/ich bin eure marie.mp3"></audio> 
+                <button onclick="toggleSong('player1', this)" class="btn-small">
+                    <i class="fas fa-play"></i> Play
+                </button>
             </div>
+
             <div class="termin-item">
-                <span class="date">2024</span>
-                <span class="location">Schwarzwald-Rave</span>
-                <a href="#" class="btn-small">Anhören</a>
+                <img src="img/Cover-schwarzwaldmarie-original.png" alt="Cover" class="song-cover">
+                <div class="song-info">
+                    <span class="song-title">Schwarzwaldmarie</span>
+                    <div class="streaming-links">
+                        <a href="https://open.spotify.com/intl-de/track/4p4BQi1QvINxN8e39lOMWl?si=faa21d29c94e4f6c" target="_blank" class="spotify"><i class="fab fa-spotify"></i></a>
+                        <a href="https://www.youtube.com/watch?v=zIaH0q0wYfU" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <audio class="marie-player" id="player2" src="audio/schwarzwaldmarie.mp3"></audio> 
+                <button onclick="toggleSong('player2', this)" class="btn-small">
+                    <i class="fas fa-play"></i> Play
+                </button>
             </div>
+
             <div class="termin-item">
-                <span class="date">2024</span>
-                <span class="location">Kuckuck & Bass</span>
-                <a href="#" class="btn-small">Anhören</a>
+                <img src="img/Cover-schwarzwaldmarie-sbw.png" alt="Cover" class="song-cover">
+                <div class="song-info">
+                    <span class="song-title">Sonderedition SBW</span>
+                    <div class="streaming-links">
+                        <a href="https://open.spotify.com/intl-de/track/1qm7eJcmgeETLNR18MrBjG?si=554d997c20544708" target="_blank" class="spotify"><i class="fab fa-spotify"></i></a>
+                        <a href="https://www.youtube.com/watch?v=4hArfTwc5po" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <audio class="marie-player" id="player3" src="audio/schwarzwaldmarie-sbw.mp3"></audio> 
+                <button onclick="toggleSong('player3', this)" class="btn-small">
+                    <i class="fas fa-play"></i> Play
+                </button>
+            </div>
+
+            <div class="termin-item">
+                <img src="img/Cover-marie-kids.png" alt="Cover" class="song-cover">
+                <div class="song-info">
+                    <span class="song-title">Schwarzwaldmarie Kids</span>
+                    <div class="streaming-links">
+                        <a href="https://open.spotify.com/intl-de/album/60kUK2VQ5xbCDcXShS8cDF?si=xRM7lIwcQHiEX2HBlzTG0g" target="_blank" class="spotify"><i class="fab fa-spotify"></i></a>
+                        <a href="https://www.youtube.com/watch?v=FmZjxqvhEcA&list=OLAK5uy_lfLyft8jgkoMjabi0YNheIf1OEGkntSwA" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <audio class="marie-player" id="player4" src="audio/schwarzwaldmarie-kids.mp3"></audio> 
+                <button onclick="toggleSong('player4', this)" class="btn-small">
+                    <i class="fas fa-play"></i> Play
+                </button>
             </div>
         </main>
 
@@ -39,5 +129,33 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        function toggleSong(id, btn) {
+            const currentPlayer = document.getElementById(id);
+            const allPlayers = document.querySelectorAll('.marie-player');
+            const allButtons = document.querySelectorAll('.btn-small');
+
+            if (!currentPlayer.paused) {
+                currentPlayer.pause();
+                btn.innerHTML = '<i class="fas fa-play"></i> Play';
+            } else {
+                // Alle anderen stoppen
+                allPlayers.forEach((player, index) => {
+                    player.pause();
+                    player.currentTime = 0;
+                    allButtons[index].innerHTML = '<i class="fas fa-play"></i> Play';
+                });
+
+                // Aktuellen abspielen
+                currentPlayer.play();
+                btn.innerHTML = '<i class="fas fa-pause"></i> Pause';
+            }
+
+            currentPlayer.onended = function() {
+                btn.innerHTML = '<i class="fas fa-play"></i> Play';
+            };
+        }
+    </script>
 </body>
 </html>

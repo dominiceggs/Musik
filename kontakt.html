@@ -28,5 +28,19 @@
             </div>
         </footer>
     </div>
+	<script>
+    // Sucht nach "?produkt=..." in der URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const produktName = urlParams.get('produkt');
+    const messageBox = document.querySelector('textarea');
+
+    // Wenn ein Produkt übergeben wurde, schreibe es in die Textarea
+    if (produktName && messageBox) {
+        messageBox.value = "Hallo Marie, ich interessiere mich für: " + produktName + ". \n\n";
+    }
+</script>
+	
+	
+	
 </body>
 </html>

@@ -16,7 +16,10 @@
         </header>
 
         <main class="links">
-            <a href="https://suno.com/..." class="btn btn-highlight">🔥 Neuer Song: Ich bin eure Marie</a>
+            <button onclick="openVideo()" class="btn btn-highlight">
+                <i class="fas fa-play-circle"></i> Video ansehen: Ich bin eure Marie
+            </button>
+            
             <a href="songs.html" class="btn">Meine Songs</a>
             <a href="shop.html" class="btn">👕 Merch Shop</a>
             <a href="http://spotify.com/..." class="btn">Spotify</a>
@@ -36,6 +39,48 @@
             </div>
         </footer>
     </div>
+
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeVideo()">&times;</span>
+            
+            <video id="promoVideo" width="100%" controls preload="none">
+                <source src="video/promo.mp4" type="video/mp4">
+                Dein Browser unterstützt dieses Video nicht.
+            </video>
+
+            <div style="margin-top: 20px;">
+                <a href="https://www.youtube.com/watch?v=Z-0wE6CHdjs&list=OLAK5uy_m7akVZ1sPnVvWJRWH8Kb6YYJcEE5O8SHY" target="_blank" class="btn btn-highlight">
+                    Jetzt komplett hören
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("videoModal");
+        const video = document.getElementById("promoVideo");
+
+        function openVideo() {
+            modal.style.display = "block";
+            // Startet das Video automatisch beim Öffnen
+            video.play();
+        }
+
+        function closeVideo() {
+            modal.style.display = "none";
+            // Stoppt das Video und setzt es zurück
+            video.pause();
+            video.currentTime = 0;
+        }
+
+        // Schließt das Modal auch, wenn man außerhalb des Fensters klickt
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeVideo();
+            }
+        }
+    </script>
 
 </body>
 </html>
