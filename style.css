@@ -378,3 +378,32 @@ footer {
     top: -40px; right: 0;
     color: white; font-size: 35px; cursor: pointer;
 }
+/* =========================================
+   7. BIOGRAFIE BILDER FIX
+   ========================================= */
+.bio-image-large {
+    width: 100%;             /* Nutzt die volle Breite bis zum Max-Wert */
+    max-width: 450px;        /* Verhindert, dass das Bild zu riesig wird */
+    height: auto;            /* Verhindert Verzerrungen */
+    display: block;
+    margin: 0 auto 20px auto; /* Zentriert das Bild und gibt Abstand zum Text */
+    border-radius: 12px;
+    border: 1px solid rgba(230, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Optional: Für Tablets/Desktops nebeneinander */
+@media (min-width: 768px) {
+    .bio-text-block {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .bio-image-large {
+        width: 300px; /* Kleinere, feste Breite im Desktop-Layout */
+        margin: 0;    /* Entfernt die Zentrierung für Links-Bündigkeit */
+        flex-shrink: 0;
+    }
+}
