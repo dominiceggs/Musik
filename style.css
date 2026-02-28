@@ -410,4 +410,13 @@ footer {
         margin: 0;    /* Entfernt die Zentrierung für Links-Bündigkeit */
         flex-shrink: 0;
     }
+}footer {
+    margin-top: 30px; /* Erzeugt den Abstand (Leerzeile) nach oben */
+    padding-top: 10px;
+    text-align: center;
+}
+
+.legal-footer, .legal-links {
+    margin-top: 15px; /* Zusätzlicher Abstand direkt vor Impressum/Datenschutz */
+    font-size: 0.8rem;
 }
