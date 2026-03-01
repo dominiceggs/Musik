@@ -48,8 +48,18 @@
             margin-bottom: 10px;
         }
 
+        .einkaufsliste {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
         @media (max-width: 800px) {
-            .rezept-layout, .erlebnis-flex-container {
+            .rezept-layout, .erlebnis-flex-container, .einkaufsliste {
                 grid-template-columns: 1fr;
                 flex-direction: column;
                 text-align: center;
@@ -86,13 +96,14 @@
                 
                 <div class="rezept-layout">
                     <div>
-                        <h4 style="color: var(--bollenhut-rot);">Die Zutaten</h4>
+                        <h4 style="color: var(--bollenhut-rot);">Die genauen Mengen (3-4 Pers.)</h4>
                         <ul style="list-style: none; padding: 0; font-size: 0.9rem; line-height: 1.6;">
-                            <li><i class="fas fa-check" style="color: var(--bollenhut-rot);"></i> 250g Sushireis (mit Apfelessig &amp; Honig)</li>
-                            <li><i class="fas fa-check" style="color: var(--bollenhut-rot);"></i> Schwarzw&auml;lder Schinken (hauchd&uuml;nn)</li>
-                            <li><i class="fas fa-check" style="color: var(--bollenhut-rot);"></i> Wildschweinschinken oder ger&auml;ucherte Forelle</li>
-                            <li><i class="fas fa-check" style="color: var(--bollenhut-rot);"></i> Sahnemeerrettich &amp; Frischk&auml;se</li>
-                            <li><i class="fas fa-check" style="color: var(--bollenhut-rot);"></i> Schnittlauch, Apfelstifte, Preiselbeeren</li>
+                            <li><i class="fas fa-balance-scale" style="color: var(--bollenhut-rot); width: 20px;"></i> 250g Sushireis</li>
+                            <li><i class="fas fa-balance-scale" style="color: var(--bollenhut-rot); width: 20px;"></i> 3 EL Apfelessig & 1 TL Waldhonig</li>
+                            <li><i class="fas fa-balance-scale" style="color: var(--bollenhut-rot); width: 20px;"></i> 100g Schwarzw&auml;lder Schinken (hauchd&uuml;nn)</li>
+                            <li><i class="fas fa-balance-scale" style="color: var(--bollenhut-rot); width: 20px;"></i> 80g Wildschweinschinken oder Forelle</li>
+                            <li><i class="fas fa-balance-scale" style="color: var(--bollenhut-rot); width: 20px;"></i> 100g Frischk&auml;se & 2 TL Meerrettich</li>
+                            <li><i class="fas fa-balance-scale" style="color: var(--bollenhut-rot); width: 20px;"></i> 1 Bund Schnittlauch, 1 Apfel</li>
                         </ul>
                     </div>
                     <div>
@@ -100,26 +111,43 @@
                     </div>
                 </div>
 
+                <div class="einkaufsliste">
+                    <div>
+                        <h4 style="color: var(--bollenhut-rot); margin-top: 0;">Einkaufsliste</h4>
+                        <ul style="list-style: none; padding: 0; line-height: 1.8;">
+                            <li><i class="far fa-square"></i> Sushireis & Nori-Bl&auml;tter</li>
+                            <li><i class="far fa-square"></i> Schwarzw&auml;lder Schinken</li>
+                            <li><i class="far fa-square"></i> Wildschweinschinken / Forelle</li>
+                            <li><i class="far fa-square"></i> Frischk&auml;se & Sahnemeerrettich</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: transparent; margin-top: 0;" class="mobile-hidden">&nbsp;</h4>
+                        <ul style="list-style: none; padding: 0; line-height: 1.8;">
+                            <li><i class="far fa-square"></i> Preiselbeeren (Glas)</li>
+                            <li><i class="far fa-square"></i> Apfelessig & Waldhonig</li>
+                            <li><i class="far fa-square"></i> Dunkles Bier (z.B. Schwarzbier)</li>
+                            <li><i class="far fa-square"></i> Frischer Schnittlauch & Apfel</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div style="margin-top: 30px;">
                     <h4 style="color: var(--bollenhut-rot);">Zubereitung</h4>
                     <ol class="step-list">
-                        <li><strong>Der Reis:</strong> Koche den Sushireis und mariniere ihn mit einer Mischung aus Apfelessig, Waldhonig und einer Prise Salz.</li>
-                        <li><strong>Die Rollen:</strong> Bestreiche ein Nori-Blatt mit Meerrettich-Frischk&auml;se. Belege es mit Schinkenspeck- Wildschwein- oder Forellenstreifen und feinen Apfelstiften.</li>
-                        <li><strong>Das Finish:</strong> Rolle das Sushi fest ein und w&auml;lze die Au&szlig;enseite in frisch gehacktem Schnittlauch.</li>
-                        <li><strong>Nigiri-Style:</strong> Forme kleine Reisb&auml;llchen, belege sie mit einer Scheibe Schwarzw&auml;lder Schinken und einem Klecks Preiselbeeren.</li>
+                        <li><strong>Der Reis:</strong> Koche den Sushireis und mariniere ihn mit der Mischung aus Apfelessig, Waldhonig und Salz. Abk&uuml;hlen lassen.</li>
+                        <li><strong>Die Rollen:</strong> Bestreiche ein Nori-Blatt mit der Meerrettich-Frischk&auml;se-Creme. Belege es mit Schinken oder Forelle und feinen Apfelstiften.</li>
+                        <li><strong>Das Finish:</strong> Rolle das Sushi fest ein und w&auml;lze die Au&szlig;enseite in gehacktem Schnittlauch.</li>
+                        <li><strong>Nigiri-Style:</strong> Forme kleine Reisb&auml;llchen, belege sie mit Schinken und einem Klecks Preiselbeeren.</li>
                     </ol>
                 </div>
 
                 <div style="background: rgba(230,0,0,0.1); padding: 15px; border-radius: 8px; margin-top: 20px;">
-                    <strong>Der Kick:</strong> Serviere dazu eine Reduktion aus dunklem Bier statt Sojasauce. Das unterstreicht die rauchigen Waldaromen perfekt!
+                    <strong>Der Kick:</strong> Lass das dunkle Bier in einem Topf zu einem dicken Sirup einkochen. Serviere diese "Wald-Sojasauce" zum Dippen!
                 </div>
             </section>
 
-            <div style="margin-top: 40px; text-align: center;">
-                <a href="kontakt.html?produkt=Sushi-Abend-Anfrage" class="btn btn-highlight">
-                    <i class="fas fa-utensils"></i> Marie f&uuml;r ein Event anfragen
-                </a>
-            </div>
+            
         </main>
 
         <footer>
