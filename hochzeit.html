@@ -34,6 +34,71 @@
             line-height: 1.6;
         }
 
+        /* HIGHLIGHT: Song Sektion */
+        .song-highlight {
+            border: 2px solid var(--bollenhut-rot);
+            background: rgba(230, 0, 0, 0.07);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .song-icon-watermark {
+            position: absolute;
+            right: -10px;
+            bottom: -10px;
+            opacity: 0.1;
+            color: var(--bollenhut-rot);
+            transform: rotate(-15deg);
+            pointer-events: none;
+        }
+
+        .audio-selection {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            margin: 25px 0;
+        }
+
+        .btn-song-pulse {
+            background-color: var(--bollenhut-rot);
+            color: white !important;
+            padding: 18px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            max-width: 320px;
+            box-shadow: 0 4px 15px rgba(230, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        /* Beide Buttons pulsieren nun als Eyecatcher */
+        .btn-song-pulse.primary-pulse {
+            animation: pulse-red 2s infinite;
+        }
+
+        .btn-song-pulse.active {
+            background-color: #fff;
+            color: var(--bollenhut-rot) !important;
+            animation: none;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(230, 0, 0, 0.7); transform: scale(1); }
+            70% { box-shadow: 0 0 0 12px rgba(230, 0, 0, 0); transform: scale(1.03); }
+            100% { box-shadow: 0 0 0 0 rgba(230, 0, 0, 0); transform: scale(1); }
+        }
+
         .section-with-image {
             display: flex;
             flex-direction: row; 
@@ -41,14 +106,8 @@
             gap: 25px;
         }
 
-        .text-content {
-            flex: 1;
-        }
-
-        .text-content h2 {
-            margin-top: 0;
-            text-align: left;
-        }
+        .text-content { flex: 1; }
+        .text-content h2 { margin-top: 0; text-align: left; }
 
         .section-image {
             width: 40%;
@@ -56,10 +115,6 @@
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             border: 1px solid var(--bollenhut-rot);
-        }
-
-        .benefits-box {
-            text-align: center;
         }
 
         .feature-list {
@@ -74,15 +129,12 @@
             margin-bottom: 15px;
             padding-left: 35px;
             position: relative;
-            font-size: 1.05rem;
         }
 
         .feature-list li i {
             position: absolute;
-            left: 0;
-            top: 4px;
+            left: 0; top: 4px;
             color: var(--bollenhut-rot);
-            font-size: 1.2rem;
         }
 
         .photo-gallery {
@@ -93,23 +145,14 @@
         }
 
         .gallery-img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
+            width: 100%; height: 150px;
+            object-fit: cover; border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-img:hover {
-            transform: scale(1.05);
-            border-color: var(--bollenhut-rot);
         }
 
         .price-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.95rem;
             margin-top: 15px;
         }
 
@@ -122,7 +165,6 @@
             font-weight: bold;
             color: var(--bollenhut-rot);
             text-align: right;
-            white-space: nowrap;
         }
 
         .cta-section {
@@ -134,15 +176,9 @@
             margin-top: 40px;
         }
 
-        /* Hilfsklasse für den Audio-Button */
-        .audio-player-container {
-            margin-top: 12px;
-        }
-
         @media (max-width: 600px) {
             .section-with-image { flex-direction: column; align-items: center; }
-            .section-image { width: 100%; max-width: 100%; }
-            .text-content h2 { text-align: center; }
+            .section-image { width: 100%; }
             .photo-gallery { grid-template-columns: 1fr; }
         }
     </style>
@@ -166,23 +202,38 @@
                 <div class="section-with-image">
                     <div class="text-content">
                         <h2>Eure Liebe, unsere Heimat</h2>
-                        <p>Stellt euch vor: Der Duft von frischem Tannengrün, das sanfte Rauschen der Schwarzwaldwipfel und ein Moment, der nur euch gehört. Vergesst steife Zeremonien und vorgefertigte Texte. Wenn ihr im Schwarzwald „Ja“ sagt, soll das Echo in den Bergen und in euren Herzen noch lange nachhallen.</p>
                         <p>Ich gestalte eure freie Trauung mit echter Leidenschaft und <strong>Schwarzwaldmanier</strong>. Als eure Traurednerin begleite ich euch von den ersten Träumen bis zum emotionalen Auszug.</p>
-                        <p>Getraut werdet ihr von der <strong>„Schwarzwaldmarie“</strong> persönlich im modernen Fest-Dirndl – ein optisches Highlight, das Tradition und Eleganz perfekt verbindet.</p>
+                        <p>Getraut werdet ihr von der <strong>„Schwarzwaldmarie“</strong> persönlich im modernen Fest-Dirndl – ein optisches Highlight.</p>
                     </div>
                     <img src="img/marie_dirndl_hochzeit.jpg" alt="Marie im Dirndl" class="section-image">
                 </div>
             </div>
 
-            <div class="section-box benefits-box">
+            <div class="section-box benefits-box" style="text-align: center;">
                 <h3>Warum mit mir feiern?</h3>
-                <p>Euer großer Tag verdient Perfektion und Persönlichkeit. Ich nehme euch an die Hand:</p>
                 <ul class="feature-list">
-                    <li><i class="fas fa-heart"></i> <strong>100% Individuell:</strong> Keine Rede von der Stange – jede Zeile schreibt das Leben für euch.</li>
-                    <li><i class="fas fa-certificate"></i> <strong>Profi am Werk:</strong> Profitierte von meiner Erfahrung als Standesbeamtin.</li>
-                    <li><i class="fas fa-music"></i> <strong>Gänsehaut-Garantie:</strong> Auf Wunsch komponiere ich euren ganz persönlichen Trausong.</li>
-                    <li><i class="fas fa-mountain"></i> <strong>Heimatverbunden:</strong> Wir finden den perfekten Ort, ob Waldlichtung oder auch in einem traditionellen Weingut.</li>
+                    <li><i class="fas fa-heart"></i> <strong>100% Individuell:</strong> Jede Zeile schreibt das Leben für euch.</li>
+                    <li><i class="fas fa-certificate"></i> <strong>Profi am Werk:</strong> Profitiert von meiner Erfahrung als Standesbeamtin.</li>
+                    <li><i class="fas fa-mountain"></i> <strong>Heimatverbunden:</strong> Wir finden den perfekten Ort im Schwarzwald.</li>
                 </ul>
+            </div>
+
+            <div class="section-box song-highlight">
+                <i class="fas fa-music fa-5x song-icon-watermark"></i>
+                <h3>Eure Geschichte als Melodie</h3>
+                <p>Worte können viel sagen, aber Musik geht direkt ins Herz. Als besonderes Highlight komponiere ich für euch einen <strong>ganz persönlichen Trausong</strong>.</p>
+                
+                <div class="audio-selection">
+                    <button onclick="playSong('audio/hochzeit_marie.mp3', this)" class="btn-song-pulse primary-pulse">
+                        <i class="fas fa-play"></i> Beispiel: Er für Sie
+                    </button>
+                    <button onclick="playSong('audio/hochzeit_moritz.mp3', this)" class="btn-song-pulse primary-pulse">
+                        <i class="fas fa-play"></i> Beispiel: Sie für Ihn
+                    </button>
+                </div>
+                
+                <audio id="trauSongAudio" preload="none"></audio>
+                <p><small>Individuelle Generierung mit Euren Namen und Botschaften</small></p>
             </div>
 
             <div class="photo-gallery">
@@ -193,7 +244,6 @@
 
             <div class="section-box">
                 <h3 style="text-align: center;">Leistungen & Pakete</h3>
-                <p style="text-align: center;">Vom ersten Kennenlernen über die Detailplanung bis zur finalen Zeremonie bin ich an eurer Seite.</p>
                 <table class="price-table">
                     <tbody>
                         <tr>
@@ -201,20 +251,8 @@
                             <td class="price-tag">ab 950,- €</td>
                         </tr>
                         <tr>
-                            <td>
-                                <strong>Eigener Trausong</strong><br>
-                                <small>Individuelle Komposition & Live-Performance während der Trauung</small>
-                                <div class="audio-player-container">
-                                    <audio id="trauSongAudio" preload="none">
-                                        <source src="audio/hochzeit_marie.mp3" type="audio/mpeg">
-                                        Dein Browser unterstützt das Audio-Element nicht.
-                                    </audio>
-                                    <button onclick="toggleAudio()" class="btn-small" id="audioBtn" style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer; border: none; font-family: inherit;">
-                                        <i id="audioIcon" class="fas fa-play"></i> <span id="btnText">Hörprobe abspielen</span>
-                                    </button>
-                                </div>
-                            </td>
-                            <td class="price-tag">350,- €</td>
+                            <td><strong>Eigener Trausong</strong><br><small>Individuelle Komposition & Live-Performance während der Trauung</small></td>
+                            <td class="price-tag">ab 150,- €</td>
                         </tr>
                     </tbody>
                 </table>
@@ -222,7 +260,6 @@
 
             <section class="cta-section">
                 <h3>Sagt „Ja“ zu eurem Termin!</h3>
-                <p>Lasst uns gemeinsam herausfinden, wie wir eure Geschichte am besten erzählen. Ich freue mich darauf, euch kennenzulernen!</p>
                 <p><strong>Fragt jetzt euren Wunschtermin für 2026 unverbindlich an.</strong></p>
                 <a href="kontakt.html?produkt=Hochzeit-Anfrage" class="btn btn-highlight">
                     <i class="fas fa-envelope"></i> JETZT ANFRAGEN & KENNENLERNEN
@@ -240,25 +277,48 @@
 
     <script>
         const audio = document.getElementById('trauSongAudio');
-        const icon = document.getElementById('audioIcon');
-        const btnText = document.getElementById('btnText');
+        let currentBtn = null;
 
-        function toggleAudio() {
-            if (audio.paused) {
-                audio.play();
+        function playSong(src, btn) {
+            // Wenn der gleiche Song nochmal geklickt wird
+            if (currentBtn === btn) {
+                if (audio.paused) {
+                    audio.play();
+                    updateBtnUI(btn, true);
+                } else {
+                    audio.pause();
+                    updateBtnUI(btn, false);
+                }
+                return;
+            }
+
+            // Wenn ein neuer Song geklickt wird
+            if (currentBtn) {
+                updateBtnUI(currentBtn, false);
+            }
+
+            audio.src = src;
+            audio.play();
+            currentBtn = btn;
+            updateBtnUI(btn, true);
+        }
+
+        function updateBtnUI(btn, isPlaying) {
+            const icon = btn.querySelector('i');
+            if (isPlaying) {
+                btn.classList.add('active');
                 icon.classList.replace('fa-play', 'fa-pause');
-                btnText.innerText = 'Pause';
             } else {
-                audio.pause();
+                btn.classList.remove('active');
                 icon.classList.replace('fa-pause', 'fa-play');
-                btnText.innerText = 'Hörprobe abspielen';
             }
         }
 
-        // Automatisch zurücksetzen, wenn der Song endet
         audio.onended = function() {
-            icon.classList.replace('fa-pause', 'fa-play');
-            btnText.innerText = 'Hörprobe abspielen';
+            if (currentBtn) {
+                updateBtnUI(currentBtn, false);
+                currentBtn = null;
+            }
         };
     </script>
 </body>
