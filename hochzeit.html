@@ -58,7 +58,6 @@
             border: 1px solid var(--bollenhut-rot);
         }
 
-        /* VORTEILE MITTIG IM RAHMEN */
         .benefits-box {
             text-align: center;
         }
@@ -135,6 +134,11 @@
             margin-top: 40px;
         }
 
+        /* Hilfsklasse für den Audio-Button */
+        .audio-player-container {
+            margin-top: 12px;
+        }
+
         @media (max-width: 600px) {
             .section-with-image { flex-direction: column; align-items: center; }
             .section-image { width: 100%; max-width: 100%; }
@@ -177,7 +181,7 @@
                     <li><i class="fas fa-heart"></i> <strong>100% Individuell:</strong> Keine Rede von der Stange – jede Zeile schreibt das Leben für euch.</li>
                     <li><i class="fas fa-certificate"></i> <strong>Profi am Werk:</strong> Profitierte von meiner Erfahrung als Standesbeamtin.</li>
                     <li><i class="fas fa-music"></i> <strong>Gänsehaut-Garantie:</strong> Auf Wunsch komponiere ich euren ganz persönlichen Trausong.</li>
-                    <li><i class="fas fa-mountain"></i> <strong>Heimatverbunden:</strong> Wir finden den perfekten Ort, ob Waldlichtung oder Gipfel.</li>
+                    <li><i class="fas fa-mountain"></i> <strong>Heimatverbunden:</strong> Wir finden den perfekten Ort, ob Waldlichtung oder auch in einem traditionellen Weingut.</li>
                 </ul>
             </div>
 
@@ -197,7 +201,19 @@
                             <td class="price-tag">ab 950,- €</td>
                         </tr>
                         <tr>
-                            <td><strong>Eigener Trausong</strong><br><small>Individuelle Komposition & Live-Performance während der Trauung</small></td>
+                            <td>
+                                <strong>Eigener Trausong</strong><br>
+                                <small>Individuelle Komposition & Live-Performance während der Trauung</small>
+                                <div class="audio-player-container">
+                                    <audio id="trauSongAudio" preload="none">
+                                        <source src="audio/beispiel-trausong.mp3" type="audio/mpeg">
+                                        Dein Browser unterstützt das Audio-Element nicht.
+                                    </audio>
+                                    <button onclick="toggleAudio()" class="btn-small" id="audioBtn" style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer; border: none; font-family: inherit;">
+                                        <i id="audioIcon" class="fas fa-play"></i> <span id="btnText">Hörprobe abspielen</span>
+                                    </button>
+                                </div>
+                            </td>
                             <td class="price-tag">350,- €</td>
                         </tr>
                     </tbody>
@@ -221,5 +237,29 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        const audio = document.getElementById('trauSongAudio');
+        const icon = document.getElementById('audioIcon');
+        const btnText = document.getElementById('btnText');
+
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                icon.classList.replace('fa-play', 'fa-pause');
+                btnText.innerText = 'Pause';
+            } else {
+                audio.pause();
+                icon.classList.replace('fa-pause', 'fa-play');
+                btnText.innerText = 'Hörprobe abspielen';
+            }
+        }
+
+        // Automatisch zurücksetzen, wenn der Song endet
+        audio.onended = function() {
+            icon.classList.replace('fa-pause', 'fa-play');
+            btnText.innerText = 'Hörprobe abspielen';
+        };
+    </script>
 </body>
 </html>
