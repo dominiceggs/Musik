@@ -40,11 +40,11 @@ body {
 }
 
 /* =========================================
-   2. LAYOUT-CONTAINER
+   2. LAYOUT-CONTAINER (VEREINHEITLICHT)
    ========================================= */
 .container {
     width: 100%;
-    max-width: 480px; /* Standard für Startseite/Index */
+    max-width: 800px; /* Dieser Wert gilt nun für ALLE Seiten */
     padding: 40px 20px;
     display: flex;
     flex-direction: column;
@@ -53,10 +53,6 @@ body {
     margin: 0 auto;
 }
 
-/* Spezial-Klasse für breite Inhaltsseiten (Bio, Shop, etc.) */
-.container.wide-layout {
-    max-width: 850px;
-}
 
 header {
     width: 100%;
