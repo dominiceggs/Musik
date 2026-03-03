@@ -81,7 +81,6 @@
             text-transform: uppercase;
         }
 
-        /* Beide Buttons pulsieren nun als Eyecatcher */
         .btn-song-pulse.primary-pulse {
             animation: pulse-red 2s infinite;
         }
@@ -165,6 +164,7 @@
             font-weight: bold;
             color: var(--bollenhut-rot);
             text-align: right;
+            white-space: nowrap;
         }
 
         .cta-section {
@@ -181,15 +181,62 @@
             .section-image { width: 100%; }
             .photo-gallery { grid-template-columns: 1fr; }
         }
+		
+		/* NEU: Styles für die Catering-Preisliste */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .price-table td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            vertical-align: middle;
+        }
+
+        .price-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price-table i {
+            color: var(--bollenhut-rot);
+            font-size: 1.2rem;
+            margin-right: 10px;
+            width: 25px;
+            text-align: center;
+        }
+
+        .price-table strong {
+            color: #fff;
+            display: block;
+            font-size: 1.05rem;
+        }
+
+        .price-table small {
+            color: rgba(255, 255, 255, 0.6);
+            display: block;
+            margin-top: 4px;
+        }
+
+        .price-amount {
+            text-align: right;
+            font-weight: bold;
+            color: var(--bollenhut-rot) !important;
+            white-space: nowrap;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <a href="index.html">
-                <img src="bandbildmittel.jpg" alt="Bollenhut-Marie" class="hero-image">
+                <img src="img/hochzeit_bg.jpg" alt="Bollenhut-Marie" class="hero-image">
             </a>
-            <h1 style="color: var(--text-white);">Trauen im Schwarzwald</h1>
+            
         </header>
 
         <main class="links">
@@ -214,14 +261,14 @@
                 <ul class="feature-list">
                     <li><i class="fas fa-heart"></i> <strong>100% Individuell:</strong> Jede Zeile schreibt das Leben für euch.</li>
                     <li><i class="fas fa-certificate"></i> <strong>Profi am Werk:</strong> Profitiert von meiner Erfahrung als Standesbeamtin.</li>
-                    <li><i class="fas fa-mountain"></i> <strong>Heimatverbunden:</strong> Wir finden den perfekten Ort im Schwarzwald.</li>
+                    <li><i class="fas fa-mountain"></i> <strong>Heimatverbunden:</strong> Wir haben mit einem Weingut den perfekten Ort im Schwarzwald.</li>
                 </ul>
             </div>
 
             <div class="section-box song-highlight">
                 <i class="fas fa-music fa-5x song-icon-watermark"></i>
                 <h3>Eure Geschichte als Melodie</h3>
-                <p>Worte können viel sagen, aber Musik geht direkt ins Herz. Als besonderes Highlight komponiere ich für euch einen <strong>ganz persönlichen Trausong</strong>.</p>
+                <p>Worte können viel sagen, aber Musik geht direkt ins Herz. Als besonderes Highlight generiere ich für euch einen <strong>ganz persönlichen Trausong</strong>.</p>
                 
                 <div class="audio-selection">
                     <button onclick="playSong('audio/hochzeit_marie.mp3', this)" class="btn-song-pulse primary-pulse">
@@ -254,9 +301,43 @@
                             <td><strong>Eigener Trausong</strong><br><small>Individuelle Komposition & Live-Performance während der Trauung</small></td>
                             <td class="price-tag">ab 150,- €</td>
                         </tr>
+                        <tr>
+                            <td><strong>Exklusives Weingut</strong><br><small>Nutzung der Event-Location inmitten der Reben (Saison 2026)</small></td>
+                            <td class="price-tag">ab 1.250,- €</td>
+                        </tr>
+                       
                     </tbody>
                 </table>
             </div>
+			
+			<div class="section-box">
+                <h3 style="text-align: center;">Catering & Sektempfang</h3>
+                <p>Vom klassischen Laugengebäck bis zum innovativen Schwarzwald-Sushi – wir verwöhnen euch und eure Gäste.</p>
+                
+                <table class="price-table">
+                    <tr>
+                        <td>
+                            <i class="fas fa-glass-cheers"></i>
+                            <strong>Sektempfang "Marie"</strong>
+                            <small>Hauseigener Secco & Laugengebäck</small>
+                        </td>
+                        <td class="price-amount">ab 12,50 € / Gast</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <i class="fas fa-utensils"></i>
+                            <strong>Fingerfood & Schwarzwald-Sushi</strong>
+                            <small>Fusion aus Schinken/Forelle & Wald-Sojasauce</small>
+                        </td>
+                        <td class="price-amount">ab 18,00 € / Gast</td>
+                    </tr>
+                </table>
+            </div>
+			
+			
+			
+			
+			
 
             <section class="cta-section">
                 <h3>Sagt „Ja“ zu eurem Termin!</h3>
@@ -265,6 +346,10 @@
                     <i class="fas fa-envelope"></i> JETZT ANFRAGEN & KENNENLERNEN
                 </a>
             </section>
+			
+		
+			
+			
         </main>
 
         <footer>
@@ -280,7 +365,6 @@
         let currentBtn = null;
 
         function playSong(src, btn) {
-            // Wenn der gleiche Song nochmal geklickt wird
             if (currentBtn === btn) {
                 if (audio.paused) {
                     audio.play();
@@ -292,7 +376,6 @@
                 return;
             }
 
-            // Wenn ein neuer Song geklickt wird
             if (currentBtn) {
                 updateBtnUI(currentBtn, false);
             }
