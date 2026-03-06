@@ -4,53 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bollenhut-Marie | Links</title>
-	<link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<style>
-    .btn .fa-heart {
-        color: var(--bollenhut-rot);
-        margin-right: 8px;
-    }
-</style>	
-	
-	
+    <style>
+        .btn .fa-heart {
+            color: var(--bollenhut-rot);
+            margin-right: 8px;
+        }
+    </style>	
 </head>
 <body>
 
     <div class="container">
         <header>
-    <img src="img/bandbildmittel.jpg" alt="Bollenhut-Marie" class="hero-image">
-    <h1>Bollenhut-Marie</h1>
-</header>
+            <img src="img/bandbildmittel.jpg" alt="Bollenhut-Marie" class="hero-image">
+            <h1>Bollenhut-Marie</h1>
+        </header>
 
         <main class="links">
-    <button onclick="openVideo()" class="btn btn-highlight">
-        <i class="fas fa-play-circle"></i> Video ansehen: Ich bin eure Marie
-    </button>
-    
-    <a href="songs.html" class="btn">Meine Songs</a>
-    <a href="bio.html" class="btn">Über Marie</a>
-    <a href="erlebnis.html" class="btn">🌲 Schwarzwald & Sushi</a>
-	<a href="spezialitaeten.html" class="btn">
-    <i class="fas fa-wine-glass-alt"></i> Marie Secco & Spezialitäten
-</a>
-    
-    <a href="hochzeit.html" class="btn">
-        <i class="fas fa-heart"></i> Schwarzwaldhochzeit
-    </a>
+            <button onclick="openVideo()" class="btn btn-highlight">
+                <i class="fas fa-play-circle"></i> Video ansehen: Ich bin eure Marie
+            </button>
+            
+            <a href="bio.html" class="btn">Über die Marke "Bollenhut-Marie"</a>
 
-    <a href="shop.html" class="btn">👕 Merch Shop</a>
-    
-    <a href="https://www.instagram.com/bollenhut_marie/" target="_blank" class="btn">
-        <i class="fab fa-instagram"></i> Instagram
-    </a>
-</main>
+            <a href="hochzeit.html" class="btn">
+                <i class="fas fa-heart"></i> Schwarzwaldhochzeit
+            </a>
+
+            <a href="erlebnis.html" class="btn">🌲 Schwarzwald Kulinarik</a>
+
+            <a href="spezialitaeten.html" class="btn">
+                <i class="fas fa-wine-glass-alt"></i> Marie Secco & Spezialitäten
+            </a>
+
+            <a href="shop.html" class="btn">👕 Merch Shop</a>
+
+            <a href="songs.html" class="btn">Meine Songs</a>
+            
+            <a href="https://www.instagram.com/bollenhut_marie/" target="_blank" class="btn">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+        </main>
 
         <footer>
             <div class="social-icons">
                 <a href="https://www.instagram.com/bollenhut_marie" target="_blank">
-        <i class="fab fa-instagram"></i></a>
+                    <i class="fab fa-instagram"></i>
+                </a>
                 <a href="#"><i class="fab fa-tiktok"></i></a>
                 <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
@@ -84,18 +86,15 @@
 
         function openVideo() {
             modal.style.display = "block";
-            // Startet das Video automatisch beim Öffnen
             video.play();
         }
 
         function closeVideo() {
             modal.style.display = "none";
-            // Stoppt das Video und setzt es zurück
             video.pause();
             video.currentTime = 0;
         }
 
-        // Schließt das Modal auch, wenn man außerhalb des Fensters klickt
         window.onclick = function(event) {
             if (event.target == modal) {
                 closeVideo();

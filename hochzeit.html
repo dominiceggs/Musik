@@ -18,7 +18,7 @@
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/hochzeit_panorama.jpg');
             background-size: cover;
             background-position: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
             border-radius: 12px;
             margin-bottom: 30px;
@@ -182,7 +182,6 @@
             .photo-gallery { grid-template-columns: 1fr; }
         }
 		
-		/* NEU: Styles für die Catering-Preisliste */
         .price-table {
             width: 100%;
             border-collapse: collapse;
@@ -236,21 +235,20 @@
             <a href="index.html">
                 <img src="img/hochzeit_bg.jpg" alt="Bollenhut-Marie" class="hero-image">
             </a>
-            
         </header>
 
         <main class="links">
             <section class="wedding-hero">
-                <h2 style="color: white; font-size: 1.8rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); margin: 0;">Ja-Wort unter Tannen</h2>
-                <p style="color: white; font-size: 1.1rem; margin-top: 10px;">Individuell. Herzlich. Echt.</p>
+                <h2 style="color: white; font-size: 2.2rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); margin: 0;">Ja-Wort unter Tannen</h2>
+                <p style="color: white; font-size: 1.2rem; margin-top: 10px; font-style: italic;">Individuell. Herzlich. Echt.</p>
             </section>
 
             <div class="section-box">
                 <div class="section-with-image">
                     <div class="text-content">
                         <h2>Eure Liebe, unsere Heimat</h2>
-                        <p>Ich gestalte eure freie Trauung mit echter Leidenschaft und <strong>Schwarzwaldmanier</strong>. Als eure Traurednerin begleite ich euch von den ersten Träumen bis zum emotionalen Auszug.</p>
-                        <p>Getraut werdet ihr von der <strong>„Schwarzwaldmarie“</strong> persönlich im modernen Fest-Dirndl – ein optisches Highlight.</p>
+                        <p>Vergesst steife Zeremonien und auswendig gelernte Floskeln. Bei mir steht ihr im Mittelpunkt – unverfälscht, herzlich und mit einer ordentlichen Portion Schwarzwald-Seele. Als eure Traurednerin webe ich eure ganz persönliche Liebesgeschichte in eine Zeremonie ein, die so individuell ist wie euer gemeinsamer Weg.</p>
+                        <p>Ob barfuß auf einer Waldlichtung oder elegant im Weinberg: Ich begleite euch mit Fingerspitzengefühl, Humor und der nötigen Tiefe. Dass ich dabei mein modernes Fest-Dirndl trage, ist nicht nur Tradition, sondern ein Versprechen an die Echtheit unserer Heimat. Gemeinsam erschaffen wir einen Moment, der nicht nur in den Fotoalben, sondern vor allem in den Herzen bleibt.</p>
                     </div>
                     <img src="img/marie_dirndl_hochzeit.jpg" alt="Marie im Dirndl" class="section-image">
                 </div>
@@ -268,8 +266,10 @@
             <div class="section-box song-highlight">
                 <i class="fas fa-music fa-5x song-icon-watermark"></i>
                 <h3>Eure Geschichte als Melodie</h3>
-                <p>Worte können viel sagen, aber Musik geht direkt ins Herz. Als besonderes Highlight generiere ich für euch einen <strong>ganz persönlichen Trausong</strong>.</p>
+                <p>Stellt euch vor: Ihr schreitet zum Altar, und es spielt nicht irgendein Popsong aus dem Radio, sondern <strong>euer Song</strong>. Ein Lied, das eure Namen nennt, eure Meilensteine besingt und genau die Emotionen trifft, die ihr in diesem Moment fühlt.</p>
                 
+                <p>Durch meine innovative Verbindung von Tradition und modernster Technik erschaffe ich für euch eine exklusive Komposition. Ob als Überraschung oder als Highlight für den Einzug – dieser Song bleibt euer lebenslanges Souvenir an diesen magischen Tag.</p>
+
                 <div class="audio-selection">
                     <button onclick="playSong('audio/hochzeit_marie.mp3', this)" class="btn-song-pulse primary-pulse">
                         <i class="fas fa-play"></i> Beispiel: Er für Sie
@@ -281,6 +281,16 @@
                 
                 <audio id="trauSongAudio" preload="none"></audio>
                 <p><small>Individuelle Generierung mit Euren Namen und Botschaften</small></p>
+            </div>
+
+            <div class="section-box" style="border-left: 5px solid var(--bollenhut-rot);">
+                <h3 style="text-align: left;"><i class="fas fa-wine-glass-alt"></i> Die Location: Wo die Reben flüstern</h3>
+                <p>Unser exklusives Partner-Weingut bietet euch für die Saison 2026 eine Kulisse, die Träume wahr werden lässt. Hoch über dem Tal, mit weitem Blick über die Schwarzwaldgipfel, findet ihr die perfekte Symbiose aus Naturidylle und modernem Komfort.</p>
+                <ul class="feature-list" style="margin-top: 0;">
+                    <li><i class="fas fa-check"></i> <strong>Die Zeremonie:</strong> Unter freiem Himmel zwischen den Rebstöcken.</li>
+                    <li><i class="fas fa-check"></i> <strong>Das Ambiente:</strong> Rustikale Eleganz trifft auf badische Gastfreundschaft.</li>
+                    <li><i class="fas fa-check"></i> <strong>Der Komfort:</strong> Kurze Wege direkt zum Sektempfang auf der Panoramaterrasse.</li>
+                </ul>
             </div>
 
             <div class="photo-gallery">
@@ -305,14 +315,13 @@
                             <td><strong>Exklusives Weingut</strong><br><small>Nutzung der Event-Location inmitten der Reben (Saison 2026)</small></td>
                             <td class="price-tag">ab 1.250,- €</td>
                         </tr>
-                       
                     </tbody>
                 </table>
             </div>
 			
 			<div class="section-box">
                 <h3 style="text-align: center;">Catering & Sektempfang</h3>
-                <p>Vom klassischen Laugengebäck bis zum innovativen Schwarzwald-Sushi – wir verwöhnen euch und eure Gäste.</p>
+                <p>Ein Fest für die Sinne: Wir glauben, dass Liebe auch durch den Magen geht. Deshalb servieren wir Schwarzwald-Kulinarik mit einem modernen Twist. Unser <strong>"Schwarzwald-Sushi"</strong> ist das absolute Gesprächsthema – feinster Schinken oder Forelle, kunstvoll kombiniert.</p>
                 
                 <table class="price-table">
                     <tr>
@@ -328,16 +337,12 @@
                             <i class="fas fa-utensils"></i>
                             <strong>Fingerfood & Schwarzwald-Sushi</strong>
                             <small>Fusion aus Schinken/Forelle & Wald-Sojasauce</small>
+							<small>Verfügbar ab 20 Personen</small>
                         </td>
                         <td class="price-amount">ab 18,00 € / Gast</td>
                     </tr>
                 </table>
             </div>
-			
-			
-			
-			
-			
 
             <section class="cta-section">
                 <h3>Sagt „Ja“ zu eurem Termin!</h3>
@@ -346,10 +351,6 @@
                     <i class="fas fa-envelope"></i> JETZT ANFRAGEN & KENNENLERNEN
                 </a>
             </section>
-			
-		
-			
-			
         </main>
 
         <footer>
